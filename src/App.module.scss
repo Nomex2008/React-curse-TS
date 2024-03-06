@@ -1,0 +1,12 @@
+$primary: rgb(0, 179, 255);
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+.hello {
+  font-size: 32px;
+  color: $primary;
+}
