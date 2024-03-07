@@ -1,24 +1,12 @@
 import styles from "./App.module.scss";
-
-const menu = [
-  {
-    name:'Home',
-    link:'/',
-  },
-  {
-    name:'Prodacts',
-    link:'/prodacts',
-  },
-]
+import Details from "./Details";
+import First from "./First";
 
 export function App() {
   return (
     <>
-      <div className={styles.hello}>Hello</div>
-      {menu.map(item => (
-        <p key={item.link}>{item.name}</p>
-      ))}
-      <img src="/email.jpg" alt="" />
+      <First/>
+      <Details/>
     </>
   )
 }
