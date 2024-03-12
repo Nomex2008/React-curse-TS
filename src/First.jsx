@@ -1,3 +1,4 @@
+import { useRef } from "react";
 import styles from "./App.module.scss";
 
 const menu = [
@@ -15,14 +16,26 @@ const isAuth = false;
 const role = 'admin';
   
 
-const First = () => {
+const First = ({details}) => {
+    const imageRef = useRef()
+
+    const onClick = () => {
+        //console.log(imageRef.current)
+        if(!imageRef.current) return
+
+        imageRef.current.style.borderRadius = '20px';
+        imageRef.current.style.boxShadow = '0 3px 6px rgba(0,0,0, .1)'
+    }
     return ( 
         <>
-            <div className={styles.hello}>Hello</div>
+            <div className={styles.hello}>{details.hello}</div>
             {menu.map(item => (
                 <p key={item.link}>{item.name}</p>
             ))}
-            <img src="/email.jpg" alt="" />
+
+            <img ref={imageRef} src="/email.jpg" alt="" />
+            <br/>
+            <button onClick={onClick}>Change img</button>
 
             <p>
                 {isAuth 
