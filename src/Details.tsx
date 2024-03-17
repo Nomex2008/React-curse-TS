@@ -1,3 +1,4 @@
+import { memo } from "react";
 import { IDetails } from "./types";
 
 interface Props {
@@ -5,7 +6,7 @@ interface Props {
     setDetails: React.Dispatch<React.SetStateAction<IDetails>>
 }
 
-const Details = ({details, setDetails}: Props) => {
+const InitialDetails = ({details, setDetails}: Props) => {
     return ( 
         <>
             <button onClick={() => {setDetails(prev => {
@@ -17,5 +18,7 @@ const Details = ({details, setDetails}: Props) => {
             <h1>{details.title}</h1>
         </> );
 }
+
+const Details = memo(InitialDetails)
  
 export default Details;

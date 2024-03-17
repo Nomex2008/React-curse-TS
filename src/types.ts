@@ -1,4 +1,4 @@
-interface IDetails {
+export interface IDetails {
     isLoading: boolean,
     title: string,
     hello: string,
